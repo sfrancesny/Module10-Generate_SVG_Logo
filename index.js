@@ -1,4 +1,4 @@
-import inquirer from 'inquirer';
+const inquirer = require('inquirer'); // Use CommonJS syntax
 import fs from 'fs';
 import generateCircle from './lib/circle';
 import generateTriangle from './lib/triangle';
