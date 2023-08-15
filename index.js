@@ -3,7 +3,7 @@ import fs from 'fs';
 import generateCircle from './lib/circle';
 import generateTriangle from './lib/triangle';
 import generateSquare from './lib/square';
-import generateLogo, { generateCircle, generateTriangle, generateSquare } from './lib/shapes.js';
+import generateLogo from './lib/shapes.js';
 
 const promptUser = async () => {
   const userInput = await inquirer.prompt([
