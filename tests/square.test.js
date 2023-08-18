@@ -1,5 +1,5 @@
 // lib/square.test.js
-import { Square } from 'lib\shapes.js';
+import { Square } from '/lib/shapes.js';
 
 describe('Square', () => {
   it('should render an SVG string with the given shape color', () => {
