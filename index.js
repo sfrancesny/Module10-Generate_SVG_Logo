@@ -1,8 +1,7 @@
-// index.js
-const fs = require('fs');
-const inquirer = require('inquirer');
-const { createLogoSVG } = require('./lib/logoGenerator'); //
-const { Triangle, Circle, Square } = require('./lib/shapes');
+import fs from 'fs';
+import inquirer from 'inquirer';
+import { createLogoSVG } from './lib/logoGenerator.js'; // Adjust the path accordingly
+import { Triangle, Circle, Square } from './lib/shapes.js'; // Adjust the path accordingly
 
 async function generateLogo() {
   const userInput = await inquirer.prompt([
@@ -28,7 +27,7 @@ async function generateLogo() {
         name: 'shapeColor',
         message: 'Enter shape color (color keyword or hexadecimal number):'
       }
- ]);
+  ]);
 
   const svgContent = createLogoSVG(userInput);
 
