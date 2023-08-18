@@ -1,52 +1,40 @@
-const inquirer = require('inquirer'); // Use CommonJS syntax
-import fs from 'fs';
-import generateCircle from './lib/circle';
-import generateTriangle from './lib/triangle';
-import generateSquare from './lib/square';
+const fs = require('fs');
+const inquirer = require('inquirer');
+const { createLogoSVG } = require('./logoGenerator'); // You need to implement the logo generation function
 
-const promptUser = async () => {
+async function generateLogo() {
   const userInput = await inquirer.prompt([
     {
       type: 'input',
       name: 'text',
       message: 'Enter up to three characters:',
-      validate: input => input.length <= 3 || 'Text must be up to three characters',
+      validate: input => input.length <= 3 ? true : 'Please enter up to three characters.'
     },
     {
       type: 'input',
       name: 'textColor',
-      message: 'Enter text color (color keyword or hexadecimal number):',
+      message: 'Enter text color (color keyword or hexadecimal number):'
     },
     {
       type: 'list',
       name: 'shape',
       message: 'Choose a shape:',
-      choices: ['circle', 'triangle', 'square'],
+      choices: ['circle', 'triangle', 'square']
     },
     {
       type: 'input',
       name: 'shapeColor',
-      message: 'Enter shape color (color keyword or hexadecimal number):',
-    },
+      message: 'Enter shape color (color keyword or hexadecimal number):'
+    }
   ]);
 
-  let shapeSVG = '';
-  if (userInput.shape === 'circle') {
-    shapeSVG = generateCircle(userInput.shapeColor);
-  } else if (userInput.shape === 'triangle') {
-    shapeSVG = generateTriangle(userInput.shapeColor);
-  } else if (userInput.shape === 'square') {
-    shapeSVG = generateSquare(userInput.shapeColor);
-  }
+  // Generate SVG based on user input
+  const svgContent = createLogoSVG(userInput);
 
-  const svgContent = generateLogo(
-    userInput.text,
-    userInput.textColor,
-    shapeSVG
-  );
-
+  // Write SVG content to a file
   fs.writeFileSync('logo.svg', svgContent);
-  console.log('Generated logo.svg');
-};
 
-promptUser();
+  console.log('Generated logo.svg');
+}
+
+generateLogo();
