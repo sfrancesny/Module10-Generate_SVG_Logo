@@ -1,6 +1,6 @@
 // // lib/shapes.test.js
 
-import { Triangle } from '/lib/shapes.js'; 
+import { Triangle } from '../lib/shapes.js';
 
 describe('Triangle', () => {
   it('should render an SVG string with the given shape color', () => {

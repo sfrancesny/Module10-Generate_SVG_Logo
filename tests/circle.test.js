@@ -1,5 +1,5 @@
 // lib/circle.test.js
-import { Circle } from '/lib/shapes.js';
+import { Circle } from '../lib/shapes.js';
 
 describe('Circle', () => {
   it('should render an SVG string with the given shape color', () => {
