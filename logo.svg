@@ -1,9 +1,0 @@
-
-    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-      
-          <polygon points="150,30 120,130 180,130" fill="orange" />
-        
-
-      <text x="50%" y="50%" font-family="Arial" font-size="16" fill="black" text-anchor="middle" dy=".3em">MLT</text>
-    </svg>
-  
