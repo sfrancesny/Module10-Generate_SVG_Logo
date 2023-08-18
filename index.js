@@ -1,7 +1,7 @@
 import fs from 'fs';
 import inquirer from 'inquirer';
-import { createLogoSVG } from './lib/logoGenerator.js'; // Adjust the path accordingly
-import { Triangle, Circle, Square } from './lib/shapes.js'; // Adjust the path accordingly
+import { createLogoSVG } from './lib/logoGenerator.js';
+import { Triangle, Circle, Square } from './lib/shapes.js';
 
 async function generateLogo() {
   const userInput = await inquirer.prompt([
