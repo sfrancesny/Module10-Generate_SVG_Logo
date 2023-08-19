@@ -1,4 +1,3 @@
-// lib/shapes.test.js
 import { describe, expect, test } from '@jest/globals';
 import { Triangle } from '../lib/shapes';
 
@@ -14,4 +13,5 @@ describe('Triangle class', () => {
     expect(triangle.render(shapeColor)).toBe(expectedSVG);
   });
 });
+
 

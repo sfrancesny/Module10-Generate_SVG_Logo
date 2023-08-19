@@ -13,3 +13,4 @@ describe('Square class', () => {
     expect(square.render(shapeColor)).toBe(expectedSVG);
   });
 });
+

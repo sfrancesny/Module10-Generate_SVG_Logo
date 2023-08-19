@@ -13,3 +13,4 @@ describe('Circle class', () => {
     expect(circle.render(shapeColor)).toBe(expectedSVG);
   });
 });
+
