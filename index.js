@@ -3,8 +3,19 @@ import inquirer from 'inquirer';
 import { createLogoSVG } from './lib/logoGenerator.js';
 import { Triangle, Circle, Square } from './lib/shapes.js';
 
-async function generateLogo() {
-  const userInput = await inquirer.prompt([
+class LogoGenerator {
+  constructor() {
+    this.inquirer = inquirer;
+    this.fs = fs;
+    this.shapes = {
+      triangle: Triangle,
+      circle: Circle,
+      square: Square
+    };
+  }
+
+  async generateLogo() {
+    const userInput = await this.inquirer.prompt([
       {
         type: 'input',
         name: 'text',
@@ -20,20 +31,25 @@ async function generateLogo() {
         type: 'list',
         name: 'shape',
         message: 'Choose a shape:',
-        choices: ['circle', 'triangle', 'square']
+        choices: Object.keys(this.shapes)
       },
       {
         type: 'input',
         name: 'shapeColor',
         message: 'Enter shape color (color keyword or hexadecimal number):'
       }
-  ]);
+    ]);
 
-  const svgContent = createLogoSVG(userInput);
+    const ShapeClass = this.shapes[userInput.shape];
+    const shapeInstance = new ShapeClass();
 
-  fs.writeFileSync('logo.svg', svgContent);
+    const svgContent = createLogoSVG(userInput, shapeInstance);
 
-  console.log('Generated logo.svg');
+    this.fs.writeFileSync('logo.svg', svgContent);
+
+    console.log('Generated logo.svg');
+  }
 }
 
-generateLogo();
+const logoGenerator = new LogoGenerator();
+logoGenerator.generateLogo();
