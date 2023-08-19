@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { Circle } from '../lib/shapes';
+import { Circle } from 'shapes';
 
 describe('Circle class', () => {
   test('should render an SVG string with the given shape color', () => {

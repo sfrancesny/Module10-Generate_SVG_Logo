@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { Square } from '../lib/shapes';
+import { Square } from 'shapes';
 
 describe('Square class', () => {
   test('should render an SVG string with the given shape color', () => {
@@ -13,4 +13,3 @@ describe('Square class', () => {
     expect(square.render(shapeColor)).toBe(expectedSVG);
   });
 });
-
