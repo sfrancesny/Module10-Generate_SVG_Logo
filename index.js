@@ -48,5 +48,5 @@ import("inquirer")
       });
   })
   .catch((error) => {
-    console.error("Error importing inquirer:", error);
+    console.error("Error:", error);
   });
