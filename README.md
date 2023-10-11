@@ -25,7 +25,9 @@ WHEN I open the `logo.svg` file in a browser
 THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
 ## Usage
-The application will be invoked by using the following command: node index.js
+The application will be invoked by using the following command: 
+npm install
+node index.js
 
 ## Resources
 Xpert Learning Assistant
