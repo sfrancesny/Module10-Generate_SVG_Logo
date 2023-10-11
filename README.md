@@ -33,7 +33,7 @@ node index.js
 Xpert Learning Assistant
 
 ## Screenshot of Mock Logo 
-<img src=".png"/>
+<img src="mockLogoScreenshot.png"/>
 
 ## Link to Video Demo 
 Link: https://drive.google.com/file/d/1t6g5A8929DRgnniBK4j_UWFUvmN17y1j/view
