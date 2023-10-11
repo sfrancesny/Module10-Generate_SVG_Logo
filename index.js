@@ -1,10 +1,12 @@
 // index.js
-import { generateLogo } from "./logoGenerator";
+import inquirer from 'inquirer';
+import fs from 'fs';
+import { generateLogo } from "./lib/logoGenerator.js";
 
-(async () => {
-  try {
-    await generateLogo();
-  } catch (error) {
-    console.error("Error:", error);
-  }
-})();
+// Calls the generateLogo function to start the logo generation process
+generateLogo().then(() => {
+    console.log("Logo generation process completed!");
+}).catch(err => {
+    console.error("Error during logo generation:", err);
+});
+
